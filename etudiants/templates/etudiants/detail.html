@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails de l'étudiant</title>
+</head>
+<body>
+    <h1>Détails de l'étudiant</h1>
+
+    {% if etudiant %}
+        <ul>
+            <li><strong>ID :</strong> {{ etudiant.id }}</li>
+            <li><strong>Nom :</strong> {{ etudiant.nom }}</li>
+            <li><strong>Moyenne :</strong> {{ etudiant.moyenne }} / 20</li>
+            <li><strong>Filière :</strong> {{ etudiant.filiere }}</li>
+        </ul>
+    {% endif %}
+
+    <p>
+<a href="{% url 'etudiants:liste' %}">← Retour à la liste des étudiants</a>    </p>
+</body>
+</html>

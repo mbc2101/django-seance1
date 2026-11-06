@@ -1,0 +1,12 @@
+<!-- templates/etudiants/liste.html -->
+<h1>Liste des étudiants</h1>
+<ul>
+{% for e in etudiants %}
+  <li><a href="{% url "etudiants:detail" e.id %}">{{ e.nom }}</a> ({{ e.moyenne }})</li>
+{% empty %}
+  <li>Aucun étudiant</li>
+{% endfor %}
+</ul>
+
+<!-- templates/etudiants/detail.html -->
+<h1>{{ etudiant.nom }}</h1><p>Moyenne : {{ etudiant.moyenne }}</p>
